@@ -5,8 +5,14 @@ import cors from 'cors';
 const app = express();
 const PORT = 3001;
 
+// Configuração do CORS
+const corsOptions = {
+    origin: '*', // Permite todas as origens (você pode restringir a uma origem específica se necessário)
+    optionsSuccessStatus: 200 // Para navegadores antigos
+};
+
 // Middleware para permitir CORS
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Rota para a raiz
 app.get('/', (req, res) => {

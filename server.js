@@ -1,8 +1,12 @@
-const express = require('express');
-const axios = require('axios');
+import express from 'express';
+import axios from 'axios';
+import cors from 'cors';
 
 const app = express();
 const PORT = 3001;
+
+// Middleware para permitir CORS
+app.use(cors());
 
 // Rota para a raiz
 app.get('/', (req, res) => {
